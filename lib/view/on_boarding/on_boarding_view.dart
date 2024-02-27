@@ -64,196 +64,187 @@ class _OnBoardingViewState extends State<OnBoardingView> {
     var media = MediaQuery.of(context).size;
 
     return Scaffold(
-      body: Stack(
-        children: [
-          //==============================
-          // PageView for OnBoarding pages
-          //==============================
-          PageView.builder(
-            controller: controller,
-            itemCount: pageArr.length,
-            itemBuilder: ((context, index) {
-              var pObj = pageArr[index];
-              return Container(
-                width: media.width,
-                height: media.width,
-                alignment: Alignment.topCenter,
-                padding: const EdgeInsets.only(top: 40),
-                child: LottieBuilder.asset(
-                  pObj["lottieAsset"]!,
-                  width: media.width * 1,
-                  height: media.width * 1,
-                  fit: BoxFit.contain,
-                ),
-
-                /*Lottie.network(
-                  pObj["lottieUrl"],
-                  width: media.width * 1,
-                  height: media.width * 1,
-                  fit: BoxFit.contain,
-                ),*/
-              );
-            }),
-          ),
-
-          //==============================
-          // Bottom container for text and buttons
-          //==============================
-
-          Positioned(
-            bottom: 0,
-            left: 0,
-            right: 0,
-            child: Container(
-              height: 335,
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 50),
-              decoration: const BoxDecoration(
-                color: Color(0xFF196076),
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(35),
-                  topRight: Radius.circular(35),
-                ),
+      body: PageView.builder(
+        controller: controller,
+        itemCount: pageArr.length,
+        itemBuilder: ((context, index) {
+          var pObj = pageArr[index];
+          return Stack(
+            children:[ Container(
+              width: media.width,
+              height: media.width,
+              alignment: Alignment.topCenter,
+              padding: const EdgeInsets.only(top: 40),
+              child: LottieBuilder.asset(
+                pObj["lottieAsset"]!,
+                width: media.width * 1,
+                height: media.width * 1,
+                fit: BoxFit.contain,
               ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  //==============================
-                  // Title
-                  //==============================
 
-                  Text(
-                    pageArr[selectPage]["title"]!,
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                  const SizedBox(height: 8),
-
-                  //==============================
-                  // Subtitle
-                  //==============================
-
-                  Text(
-                    pageArr[selectPage]["subtitle"]!,
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 23,
-                      fontWeight: FontWeight.w800,
-                    ),
-                  ),
-                  const SizedBox(height: 8),
-
-                  //==============================
-                  // Description
-                  //==============================
-
-                  Text(
-                    pageArr[selectPage]["description"]!,
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w400,
-                    ),
-                  ),
-                  const SizedBox(height: 30),
-                ],
-              ),
+              /*Lottie.network(
+                pObj["lottieUrl"],
+                width: media.width * 1,
+                height: media.width * 1,
+                fit: BoxFit.contain,
+              ),*/
             ),
-          ),
-          Positioned(
-            bottom: 50,
-            left: 0,
-            right: 25,
-            child:
+              //==============================
+              // Bottom container for text and buttons
+              //==============================
+
+              Positioned(
+                bottom: 0,
+                left: 0,
+                right: 0,
+                child: Container(
+                  height: 335,
+                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 50),
+                  decoration: const BoxDecoration(
+                    color: Color(0xFF196076),
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(35),
+                      topRight: Radius.circular(35),
+                    ),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      //==============================
+                      // Title
+                      //==============================
+
+                      Text(
+                        pageArr[selectPage]["title"]!,
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      const SizedBox(height: 8),
+
+                      //==============================
+                      // Subtitle
+                      //==============================
+
+                      Text(
+                        pageArr[selectPage]["subtitle"]!,
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 23,
+                          fontWeight: FontWeight.w800,
+                        ),
+                      ),
+                      const SizedBox(height: 8),
+
+                      //==============================
+                      // Description
+                      //==============================
+
+                      Text(
+                        pageArr[selectPage]["description"]!,
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                      const SizedBox(height: 30),
+                    ],
+                  ),
+                ),
+              ),
+              Positioned(
+                bottom: 50,
+                left: 0,
+                right: 25,
+                child:
 
                 //==============================
                 // Arrow Button with white background
                 //==============================
 
                 Align(
-              alignment: Alignment.centerRight,
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.white70,
-                  borderRadius: BorderRadius.circular(25),
-                ),
-                child: GestureDetector(
-                  onTap: () {
-                    //==============================
-                    // Navigate to the next page
-                    //==============================
+                  alignment: Alignment.centerRight,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white70,
+                      borderRadius: BorderRadius.circular(25),
+                    ),
+                    child: GestureDetector(
+                      onTap: () {
+                        //==============================
+                        // Navigate to the next page
+                        //==============================
 
-                    if (selectPage < pageArr.length - 1) {
-                      selectPage++;
-                      controller.animateToPage(
-                        selectPage,
-                        duration: const Duration(milliseconds: 500),
-                        curve: Curves.bounceInOut,
-                      );
-                    } else {
-                      //==============================
-                      // Handle when the last page is reached
-                      //==============================
+                        if (selectPage < pageArr.length - 1) {
+                          selectPage++;
+                          controller.animateToPage(
+                            selectPage,
+                            duration: const Duration(milliseconds: 500),
+                            curve: Curves.bounceInOut,
+                          );
+                        } else {
+                          //==============================
+                          // Handle when the last page is reached
+                          //==============================
 
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const LoginView(),
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const LoginView(),
+                            ),
+                          );
+                        }
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.all(12),
+                        child: Icon(
+                          Icons.arrow_forward,
+                          color: TColor.primaryText,
+                          size: 20,
                         ),
-                      );
-                    }
-                  },
-                  child: Padding(
-                    padding: const EdgeInsets.all(12),
-                    child: Icon(
-                      Icons.arrow_forward,
-                      color: TColor.primaryText,
-                      size: 20,
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
-          ),
-          Positioned(
-            bottom: 25,
-            left: 150,
-            right: 0,
-            child:
+              Positioned(
+                bottom: 25,
+                left: 150,
+                right: 0,
+                child:
 
                 //==============================
                 // Dots for indicating pages
                 //==============================
 
                 SmoothPageIndicator(
-              // PageController
+                  // PageController
 
-              controller: controller,
-              count: pageArr.length,
-              effect: WormEffect(
-                dotWidth: 10,
-                dotHeight: 10,
-                dotColor: TColor.placeholder,
-                activeDotColor: TColor.white,
+                  controller: controller,
+                  count: pageArr.length,
+                  effect: WormEffect(
+                    dotWidth: 10,
+                    dotHeight: 10,
+                    dotColor: TColor.placeholder,
+                    activeDotColor: TColor.white,
+                  ),
+                ),
               ),
-            ),
-          ),
-          const Positioned(
-            bottom: 310,
-            right: 50,
-            child: Hero(
-              tag: 'avatarTag',
-              child: CircleAvatar(
-                backgroundColor: Colors.white,
-                radius: 30,
-                backgroundImage: AssetImage("assets/image/ic_icons.jpg"),
-              ),
-            ),
-          )
-        ],
+              const Positioned(
+                bottom: 310,
+                right: 50,
+                child: CircleAvatar(
+                  backgroundColor: Colors.white,
+                  radius: 30,
+                  backgroundImage: AssetImage("assets/image/ic_icons.jpg"),
+                ),
+              )]
+          );
+        }),
       ),
     );
   }

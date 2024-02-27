@@ -180,7 +180,7 @@ class _SignUpViewState extends State<SignUpView> {
                         Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const OTPView(email: 'Hello',),
+                          builder: (context) => const OTPView(email: 'Piyal',),
                         ),
                       );
                       }),

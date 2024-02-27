@@ -1,6 +1,8 @@
 import 'package:animated_notch_bottom_bar/animated_notch_bottom_bar/animated_notch_bottom_bar.dart';
+import 'package:ecom_wave/view/cart/cart_view.dart';
+import 'package:ecom_wave/view/favorites/favorites_view.dart';
 import 'package:ecom_wave/view/home/home_view.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:ecom_wave/view/profile/profile_view.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavigation extends StatefulWidget {
@@ -35,9 +37,9 @@ class _BottomNavigationState extends State<BottomNavigation> {
   /// widget list
   final List<Widget> bottomBarPages = [
     const MyHomePage(title: 'Home'),
-    const Page2(),
-    const Page3(),
-    const Page4(),
+    const FavoritesView(),
+    const CartView(),
+    const ProfileView(),
   ];
 
   @override
@@ -55,7 +57,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
         notchBottomBarController: _controller,
         color: Colors.white,
         showLabel: false,
-        shadowElevation: 5,
+        shadowElevation: 2,
         kBottomRadius: 28.0,
         // notchShader: const SweepGradient(
         //   startAngle: 0,
@@ -65,7 +67,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
         // ).createShader(Rect.fromCircle(center: Offset.zero, radius: 8.0)),
         notchColor: Colors.white,
 
-        /// restart app if you change removeMargins
+        // restart app if you change removeMargins
         removeMargins: false,
         bottomBarWidth: 500,
         durationInMilliSeconds: 300,
@@ -83,11 +85,11 @@ class _BottomNavigationState extends State<BottomNavigation> {
           ),
           BottomBarItem(
             inActiveItem: Icon(
-              Icons.star,
+              Icons.favorite_border,
               color: Colors.blueGrey,
             ),
             activeItem: Icon(
-              Icons.star,
+              Icons.favorite,
               color: Colors.blueAccent,
             ),
             itemLabel: 'Page 2',
@@ -107,12 +109,12 @@ class _BottomNavigationState extends State<BottomNavigation> {
           ),*/
           BottomBarItem(
             inActiveItem: Icon(
-              Icons.settings,
+              Icons.shopping_cart,
               color: Colors.blueGrey,
             ),
             activeItem: Icon(
-              Icons.settings,
-              color: Colors.pink,
+              Icons.shopping_cart,
+              color: Colors.blueAccent,
             ),
             itemLabel: 'Page 4',
           ),
@@ -123,13 +125,13 @@ class _BottomNavigationState extends State<BottomNavigation> {
             ),
             activeItem: Icon(
               Icons.person,
-              color: Colors.purple,
+              color: Colors.blueAccent,
             ),
             itemLabel: 'Page 5',
           ),
         ],
         onTap: (index) {
-          /// perform action on tab change and to update pages you can update pages without pages
+          // perform action on tab change and to update pages you can update pages without pages
           // log('current selected index $index');
           _pageController.jumpToPage(index);
         },
