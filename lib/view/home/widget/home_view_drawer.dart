@@ -4,12 +4,13 @@ class CustomDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      backgroundColor: Colors.white,
       child: ListView(
         padding: EdgeInsets.zero,
         children: <Widget>[
           const DrawerHeader(
             decoration: BoxDecoration(
-              color: Color(0xfff8f8f8),
+              color: Color(0xff0299a4),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -30,19 +31,59 @@ class CustomDrawer extends StatelessWidget {
               ],
             ),
           ),
+
+          //home icon
           ListTile(
-            title: const Text('Item 1'),
             onTap: () {
-              // Handle item 1 tap
+              // Handle item  tap
             },
+            leading: const Icon(Icons.home),
+            title: const Text('Home'),
+
           ),
+
+          //order list icon
           ListTile(
-            title: const Text('Item 2'),
             onTap: () {
-              // Handle item 2 tap
+              // Handle item  tap
             },
+            leading: const Icon(Icons.list_alt_rounded),
+            title: const Text('Order List'),
+
           ),
-          // Add more list items as needed
+
+          //favorites icon
+          ListTile(
+            onTap: () {
+              // Handle item  tap
+            },
+            leading: const Icon(Icons.favorite_border),
+            title: const Text('Favorites List'),
+
+          ),
+
+          //cart icon
+
+          ListTile(
+            onTap: () {
+              // Handle item  tap
+            },
+            leading: const Icon(Icons.shopping_cart),
+            title: const Text('Cart List'),
+
+          ),
+
+          //info icon
+
+          ListTile(
+            onTap: () {
+              // Handle item  tap
+            },
+            leading: const Icon(Icons.info),
+            title: const Text('About Us'),
+
+          ),
+
         ],
       ),
     );

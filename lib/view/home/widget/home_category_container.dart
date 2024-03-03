@@ -45,7 +45,7 @@ class CategoryContainer extends StatelessWidget {
                         padding: const EdgeInsets.only(right: 7, left: 5),
                         child: Text(
                           categoryData["text"],
-                          style: TextStyle(fontWeight: FontWeight.bold),
+                          style: const TextStyle(fontWeight: FontWeight.bold),
                         ),
                       )
                     ],

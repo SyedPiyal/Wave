@@ -2,9 +2,9 @@ import 'package:ecom_wave/common/widget/custom_search_widget.dart';
 import 'package:ecom_wave/view/home/widget/home_category_container.dart';
 import 'package:ecom_wave/view/home/widget/home_view_drawer.dart';
 import 'package:ecom_wave/view/home/widget/home_view_slider_widget.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../profile/profile_view.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -49,27 +49,16 @@ class _MyHomePageState extends State<MyHomePage> {
               padding: const EdgeInsets.only(left: 15),
               child: Image.asset(
                 'assets/image/ic_menu.png',
-                color: const Color(0xffff7f81),
+                color: const Color(0xff0299a4),
               ),
             ),
           ),
         ),
-        actions: [
+        actions: const [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15),
-            child: GestureDetector(
-              onTap: () {
-                // Navigate to the ProfilePage when the profile icon is tapped
-                /*Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const ProfileView()),
-                );*/
-              },
-              child: const CircleAvatar(
-                backgroundImage: AssetImage("assets/image/iv_profile.jpg"),
-              ),
-            ),
-          )
+            padding: EdgeInsets.only(right: 15),
+            child: Icon(Icons.notifications,color: Color(0xff0299a4),),
+          ),
         ],
       ),
       body: Padding(
@@ -82,10 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 // Search filed
                 //==============================
 
-                const SizedBox(
-                  width: 270,
-                  child: CustomSearchFiled(hintTxt: 'Search....'),
-                ),
+                const Expanded(child: CustomSearchFiled(hintTxt: 'Search....')),
                 const SizedBox(
                   width: 10,
                 ),
@@ -99,7 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   width: 44,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    color: const Color(0xFFff7c7e),
+                    color: const Color(0xff0299a4),
                   ),
                   padding: const EdgeInsets.all(10),
                   child: Image.asset(
@@ -114,8 +100,6 @@ class _MyHomePageState extends State<MyHomePage> {
             //==============================
 
             const SizedBox(
-              width: 400,
-              height: 200,
               child: ImageSlider(
                 itemList: [
                   {
@@ -129,6 +113,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                 ],
               ),
+            ),
+
+            const SizedBox(
+              height: 20,
             ),
 
             //==============================
@@ -151,7 +139,10 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      drawer: CustomDrawer(), // Use the custom drawer here
+      //==============================
+      // Custom Drawer
+      //==============================
+      drawer: CustomDrawer(),
 
     );
   }

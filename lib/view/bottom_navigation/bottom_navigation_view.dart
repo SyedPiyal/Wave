@@ -1,9 +1,8 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-import 'package:ecom_wave/view/cart/cart_view.dart';
 import 'package:ecom_wave/view/home/home_view.dart';
 import 'package:ecom_wave/view/profile/profile_view.dart';
 import 'package:flutter/material.dart';
-
+import '../cart/cart_view.dart';
 import '../order_list/order_list_view.dart';
 
 class BottomNavigation extends StatefulWidget {
@@ -42,8 +41,8 @@ class _BottomNavigationState extends State<BottomNavigation> {
       bottomNavigationBar: CurvedNavigationBar(
         index: _currentIndex,
         backgroundColor: Colors.transparent,
-        color: Colors.blueAccent,
-        buttonBackgroundColor: Colors.blueAccent,
+        color: Color(0xff0299a4),
+        buttonBackgroundColor: Color(0xff0299a4),
         height: 60,
         items: const [
           Icon(Icons.home_filled, size: 24, color: Colors.white),

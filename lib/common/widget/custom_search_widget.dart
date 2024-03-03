@@ -17,42 +17,38 @@ class _SearchFiled extends State<CustomSearchFiled> {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 50,
-      child: GestureDetector(
+      width: double.maxFinite,
+      child: TextField(
         onTap: () {
-
-          //==============================
-          // Navigate to the SearchPage when the field is clicked
-          //==============================
-
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => SearchPage()),
+             MaterialPageRoute(
+              builder: (context) => SearchPage(),
+            ),
           );
         },
-        child: TextField(
-          style: const TextStyle(fontSize: 12),
-          decoration: InputDecoration(
-            prefixIcon: const Icon(Icons.search),
-            labelStyle: const TextStyle(fontSize: 12),
-            hintStyle: const TextStyle(fontSize: 12),
-            hintText: widget.hintTxt,
-            filled: true,
-            fillColor: const Color(0xFFf3f3f2),
-            enabledBorder: OutlineInputBorder(
-              borderSide: const BorderSide(color: Color(0xFFf3f3f2), width: 1),
-              borderRadius: BorderRadius.circular(10),
-            ),
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(10),
-              borderSide: const BorderSide(),
-            ),
-            focusedBorder: OutlineInputBorder(
-              borderSide: const BorderSide(color: Color(0xFFf3f3f2), width: 1),
-              borderRadius: BorderRadius.circular(10),
-            ),
+        style: const TextStyle(fontSize: 12),
+        decoration: InputDecoration(
+          prefixIcon: const Icon(Icons.search),
+          labelStyle: const TextStyle(fontSize: 12),
+          hintStyle: const TextStyle(fontSize: 12),
+          hintText: widget.hintTxt,
+          filled: true,
+          fillColor: const Color(0xFFf3f3f2),
+          enabledBorder: OutlineInputBorder(
+            borderSide: const BorderSide(color: Color(0xFFf3f3f2), width: 1),
+            borderRadius: BorderRadius.circular(10),
           ),
-          keyboardType: TextInputType.text,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+            borderSide: const BorderSide(),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderSide: const BorderSide(color: Color(0xFFf3f3f2), width: 1),
+            borderRadius: BorderRadius.circular(10),
+          ),
         ),
+        keyboardType: TextInputType.text,
       ),
     );
   }

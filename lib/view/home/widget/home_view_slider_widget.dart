@@ -1,4 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -44,30 +45,41 @@ class _ImageSlider extends State<ImageSlider> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Container(
-                      width: 120.0,
-                      height: 75.0,
-                      decoration: const BoxDecoration(
-                        color: Color(0xff9790d1),
-                        borderRadius: BorderRadius.all(Radius.circular(10)),
-                      ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          const Text(
-                            "Special Discount",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(fontWeight: FontWeight.bold,fontSize: 10),
-                          ),
-                          Text(
-                            currentItem["name"]!,
-                            textAlign: TextAlign.center,
-                            style: const TextStyle(
-                                color: Colors.white, fontWeight: FontWeight.bold,fontSize: 20),
-                          ),
-                        ],
+
+                    //==============================
+                    // Discount Container
+                    //==============================
+                    Opacity(
+                      opacity: 0.5,
+                      child: Container(
+                        width: 120.0,
+                        height: 75.0,
+                        decoration: const BoxDecoration(
+                          color: Color(0xff9790d1),
+                          borderRadius: BorderRadius.all(Radius.circular(10)),
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Text(
+                              "Special Discount",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(fontWeight: FontWeight.bold,fontSize: 10),
+                            ),
+                            Text(
+                              currentItem["name"]!,
+                              textAlign: TextAlign.center,
+                              style: const TextStyle(
+                                  color: Colors.white, fontWeight: FontWeight.bold,fontSize: 20),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
+
+                    //==============================
+                    // Discount Product Image
+                    //==============================
                     Image.asset('assets/image/snekers.png',
                     height: 100,width: 100,)
 
@@ -94,6 +106,10 @@ class _ImageSlider extends State<ImageSlider> {
         const SizedBox(
           height: 10,
         ),
+
+        //==============================
+        // dot indicator
+        //==============================
         Align(
           alignment: Alignment.center,
           child: AnimatedSmoothIndicator(
