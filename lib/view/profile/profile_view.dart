@@ -1,4 +1,5 @@
 import 'package:ecom_wave/view/chat/chat_view.dart';
+import 'package:ecom_wave/view/order_list/order_list_view.dart';
 import 'package:ecom_wave/view/profile/widget/profile_view_custm_row.dart';
 import 'package:ecom_wave/view/profile/widget/profile_view_custom_container.dart';
 import 'package:flutter/cupertino.dart';
@@ -28,7 +29,7 @@ class ProfileView extends StatelessWidget {
               // user name
               //==============================
               const Text(
-                'User Name',
+                'Arik',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
 
@@ -37,10 +38,10 @@ class ProfileView extends StatelessWidget {
               //==============================
 
               const Text(
-                'user@example.com',
+                'arik@gmail.com',
                 style: TextStyle(fontSize: 16),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
 
@@ -55,7 +56,14 @@ class ProfileView extends StatelessWidget {
                   //order button
 
                   ProfileViewCustomContainer(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                         MaterialPageRoute(
+                          builder: (context) => const OrderListView(),
+                        ),
+                      );
+                    },
                     name: 'Order',
                     icon: Icons.list_alt_sharp,
 
@@ -97,18 +105,20 @@ class ProfileView extends StatelessWidget {
                 ],
               ),
 
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               const Divider(
                 color: Colors.black12,
               ),
-              const ProfileViewCustomRow(
-                  title: 'UserName', subtitle: 'Arik', icon: CupertinoIcons.person),
+               ProfileViewCustomRow(
+                onTap: () {  },
+                  title: 'UserName', subtitle: 'Arik', icon: CupertinoIcons.person, ),
               const SizedBox(
                 height: 10,
               ),
-              const ProfileViewCustomRow(
+               ProfileViewCustomRow(
+                  onTap: () {  },
                   title: 'Notification',
                   subtitle: 'view notification',
                   icon: Icons.notification_important_rounded),
@@ -116,7 +126,8 @@ class ProfileView extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              const ProfileViewCustomRow(
+               ProfileViewCustomRow(
+                  onTap: () {  },
                   title: 'Settings',
                   subtitle: 'language,log out',
                   icon: CupertinoIcons.settings),

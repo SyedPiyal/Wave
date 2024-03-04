@@ -21,11 +21,11 @@ class CustomDrawer extends StatelessWidget {
                 ),
                 SizedBox(height: 10),
                 Text(
-                  'User Name',
+                  'Arik',
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
                 Text(
-                  'user@example.com',
+                  'arik@gmail.com',
                   style: TextStyle(fontSize: 16),
                 ),
               ],

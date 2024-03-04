@@ -5,8 +5,9 @@ import '../../view/search/search_view.dart';
 
 class CustomSearchFiled extends StatefulWidget {
   final String hintTxt;
+  final VoidCallback? opTap;
 
-  const CustomSearchFiled({Key? key, required this.hintTxt}) : super(key: key);
+  const CustomSearchFiled({Key? key, required this.hintTxt,this.opTap}) : super(key: key);
 
   @override
   State<CustomSearchFiled> createState() => _SearchFiled();
@@ -19,14 +20,7 @@ class _SearchFiled extends State<CustomSearchFiled> {
       height: 50,
       width: double.maxFinite,
       child: TextField(
-        onTap: () {
-          Navigator.push(
-            context,
-             MaterialPageRoute(
-              builder: (context) => SearchPage(),
-            ),
-          );
-        },
+        onTap: widget.opTap,
         style: const TextStyle(fontSize: 12),
         decoration: InputDecoration(
           prefixIcon: const Icon(Icons.search),

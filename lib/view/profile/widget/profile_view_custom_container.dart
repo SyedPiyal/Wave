@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 
 class ProfileViewCustomContainer extends StatelessWidget {
@@ -17,13 +17,23 @@ class ProfileViewCustomContainer extends StatelessWidget {
           color: const Color(0xff0299a4),
         ),
         margin: const EdgeInsets.symmetric(horizontal: 5,vertical: 5),
-        padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 10),
-        child: InkWell(onTap: onTap,
-          child: Column(
-            children: [
-              Icon(icon,color: Colors.white,),
-              Text(name,style: TextStyle(color: Colors.white,fontSize: 10),)
-            ],
+        //padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 10),
+        child: Material(
+          type: MaterialType.transparency,
+          child: InkWell(
+
+            //for changing splash radious
+            borderRadius: BorderRadius.circular(10),
+            onTap: onTap,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 10),
+              child: Column(
+                children: [
+                  Icon(icon,color: Colors.white,),
+                  Text(name,style: const TextStyle(color: Colors.white,fontSize: 10),)
+                ],
+              ),
+            ),
           ),
         ),
       ),
