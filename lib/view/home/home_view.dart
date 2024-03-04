@@ -1,6 +1,8 @@
 import 'package:ecom_wave/common/widget/custom_search_widget.dart';
 import 'package:ecom_wave/view/home/widget/home_category_container.dart';
+import 'package:ecom_wave/view/home/widget/home_product_details_page.dart';
 import 'package:ecom_wave/view/home/widget/home_view_drawer.dart';
+import 'package:ecom_wave/view/home/widget/home_view_product_list.dart';
 import 'package:ecom_wave/view/home/widget/home_view_slider_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -23,6 +25,15 @@ class _MyHomePageState extends State<MyHomePage> {
     {"text": "Bag", "image": "assets/image/bag.jpg"},
     {"text": "Wallet", "image": "assets/image/wallet.jpg"},
   ];
+
+  final List<Map<String, dynamic>> productData = [
+    {"text": "Sneakers", "image": "assets/image/sneakers.png", "price": 49.99},
+    {"text": "Watch", "image": "assets/image/watch.jpg", "price": 129.99},
+    {"text": "Jacket", "image": "assets/image/jacket.png", "price": 79.99},
+    {"text": "Bag", "image": "assets/image/bag.jpg", "price": 39.99},
+    {"text": "Wallet", "image": "assets/image/wallet.jpg", "price": 24.99},
+  ];
+
 
   final List _selectedIndexs = [];
 
@@ -148,6 +159,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 });
               },
             ),
+
+            //==============================
+            // Product List
+            //==============================
+            ProductListWidget(productList: productData,),
           ],
         ),
       ),
@@ -155,4 +171,5 @@ class _MyHomePageState extends State<MyHomePage> {
 
     );
   }
+
 }
