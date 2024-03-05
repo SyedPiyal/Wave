@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
 
-// size_option.dart
-
-
-
 class SizeOption extends StatelessWidget {
   final String size;
   final bool isSelected;
@@ -20,15 +16,15 @@ class SizeOption extends StatelessWidget {
     return GestureDetector(
       onTap: onSelect,
       child: Container(
-        padding: EdgeInsets.all(8),
-        margin: EdgeInsets.only(right: 8),
+        padding: const EdgeInsets.all(8),
+        margin: const EdgeInsets.only(right: 8),
         decoration: BoxDecoration(
           color: isSelected ? Colors.deepOrange : Colors.grey,
           borderRadius: BorderRadius.circular(5),
         ),
         child: Text(
           size,
-          style: TextStyle(
+          style: const TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.bold,
           ),
@@ -59,9 +55,9 @@ class ColorOption extends StatelessWidget {
     return GestureDetector(
       onTap: onSelect,
       child: Container(
-        width: 30,
-        height: 30,
-        margin: EdgeInsets.only(right: 8),
+        width: 20,
+        height: 20,
+        margin: const EdgeInsets.only(right: 8),
         decoration: BoxDecoration(
           color: _getColor(),
           shape: BoxShape.circle,

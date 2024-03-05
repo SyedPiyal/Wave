@@ -1,7 +1,7 @@
 import 'package:ecom_wave/common/widget/custom_search_widget.dart';
 import 'package:ecom_wave/view/home/widget/home_category_container.dart';
-import 'package:ecom_wave/view/home/widget/home_staggered_grid_widget.dart';
-import 'package:ecom_wave/view/home/widget/home_trending_product_list.dart';
+import 'package:ecom_wave/view/home/widget/home_grid_widget.dart';
+import 'package:ecom_wave/view/home/widget/home_popular_product_list.dart';
 import 'package:ecom_wave/view/home/widget/home_view_drawer.dart';
 import 'package:ecom_wave/view/home/widget/home_view_slider_widget.dart';
 import 'package:ecom_wave/view/search/search_view.dart';
@@ -218,12 +218,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
               //==============================
-              // StaggeredGridView for All Products
+              //GridView for All Products
               //==============================
-              SizedBox(
-                height: 250,
-                child:  AllProductsGridView(productList: productData),
-              ),
+              AllProductsGridView(productList: productData),
 
 
             ],

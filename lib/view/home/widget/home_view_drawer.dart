@@ -1,3 +1,7 @@
+import 'package:ecom_wave/view/cart/cart_view.dart';
+import 'package:ecom_wave/view/favorites/favorites_view.dart';
+import 'package:ecom_wave/view/home/home_view.dart';
+import 'package:ecom_wave/view/order_list/order_list_view.dart';
 import 'package:flutter/material.dart';
 
 class CustomDrawer extends StatelessWidget {
@@ -35,7 +39,12 @@ class CustomDrawer extends StatelessWidget {
           //home icon
           ListTile(
             onTap: () {
-              // Handle item  tap
+              Navigator.push(
+                context,
+                 MaterialPageRoute(
+                  builder: (context) => MyHomePage(title: 'Home'),
+                ),
+              );
             },
             leading: const Icon(Icons.home),
             title: const Text('Home'),
@@ -45,7 +54,12 @@ class CustomDrawer extends StatelessWidget {
           //order list icon
           ListTile(
             onTap: () {
-              // Handle item  tap
+              Navigator.push(
+                context,
+                 MaterialPageRoute(
+                  builder: (context) => OrderListView(),
+                ),
+              );
             },
             leading: const Icon(Icons.list_alt_rounded),
             title: const Text('Order List'),
@@ -55,7 +69,12 @@ class CustomDrawer extends StatelessWidget {
           //favorites icon
           ListTile(
             onTap: () {
-              // Handle item  tap
+              Navigator.push(
+                context,
+                 MaterialPageRoute(
+                  builder: (context) => FavoritesView(),
+                ),
+              );
             },
             leading: const Icon(Icons.favorite_border),
             title: const Text('Favorites List'),
@@ -66,14 +85,19 @@ class CustomDrawer extends StatelessWidget {
 
           ListTile(
             onTap: () {
-              // Handle item  tap
+              Navigator.push(
+                context,
+                 MaterialPageRoute(
+                  builder: (context) => CartView(),
+                ),
+              );
             },
             leading: const Icon(Icons.shopping_cart),
             title: const Text('Cart List'),
 
           ),
 
-          //info icon
+          /*//info icon
 
           ListTile(
             onTap: () {
@@ -82,7 +106,7 @@ class CustomDrawer extends StatelessWidget {
             leading: const Icon(Icons.info),
             title: const Text('About Us'),
 
-          ),
+          ),*/
 
         ],
       ),

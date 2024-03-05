@@ -4,11 +4,11 @@ import '../../order_status/order_status_view.dart';
 
 
 
-class AllTabContent extends StatelessWidget {
+class CancleTabContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: 10,
+      itemCount: 1,
       itemBuilder: (context, index) {
         return GestureDetector(
           onTap: () {

@@ -43,6 +43,12 @@ dependencies:
   carousel_slider: ^4.2.1
   curved_navigation_bar: ^1.0.3
   image_picker: ^1.0.7
+  timelines: ^0.1.0
+  timeline_tile: ^2.0.0
+  timeline_tile_nic: ^2.0.1
+
+
+
 
 
 dev_dependencies:

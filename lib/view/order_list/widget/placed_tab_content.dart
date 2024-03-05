@@ -4,11 +4,11 @@ import '../../order_status/order_status_view.dart';
 
 
 
-class AllTabContent extends StatelessWidget {
+class PlacedTabContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: 10,
+      itemCount: 5,
       itemBuilder: (context, index) {
         return GestureDetector(
           onTap: () {
@@ -47,7 +47,7 @@ class AllTabContent extends StatelessWidget {
 
                       //product status text
                       Text(
-                        'Canceled',
+                        'Placed',
                         style: TextStyle(color: Colors.red),
                       ),
                     ],

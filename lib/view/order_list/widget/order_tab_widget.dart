@@ -1,5 +1,3 @@
-// order_tab_layout.dart
-
 import 'package:flutter/material.dart';
 
 class OrderTabLayout extends StatelessWidget {
@@ -17,7 +15,7 @@ class OrderTabLayout extends StatelessWidget {
           title: const Text('Order List', style: TextStyle(fontWeight: FontWeight.bold)),
           centerTitle: true,
           bottom: PreferredSize(
-            preferredSize: Size.fromHeight(48),
+            preferredSize: const Size.fromHeight(48),
             child: Align(
               alignment: Alignment.centerLeft,
               child: TabBar(
