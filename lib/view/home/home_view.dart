@@ -214,8 +214,17 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: Text(
                       'All Products',
                       style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-                    )),
+                    ),
+                ),
               ),
+              //==============================
+              // StaggeredGridView for All Products
+              //==============================
+              SizedBox(
+                height: 250,
+                child:  AllProductsGridView(productList: productData),
+              ),
+
 
             ],
           ),

@@ -17,6 +17,8 @@ class _CartViewState extends State<CartView> {
     {"text": "Sneakers", "image": "assets/image/snekers.png", "price": 24.99},
   ];
 
+  List<int> itemQuantities = List<int>.generate(5, (index) => 1);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
