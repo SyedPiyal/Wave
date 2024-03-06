@@ -1,6 +1,8 @@
 import 'package:ecom_wave/view/cart/widget/custom_item.dart';
 import 'package:flutter/material.dart';
 
+import '../order_status/widget/package_delivery_tracking.dart';
+
 class CartView extends StatefulWidget {
   const CartView({Key? key}) : super(key: key);
 
@@ -51,7 +53,12 @@ class _CartViewState extends State<CartView> {
               width: 400,
               height: 50,
               child: ElevatedButton(onPressed: () {
-
+                Navigator.push(
+                  context,
+                    MaterialPageRoute(
+                      builder: (context) => PackageDeliveryTrackingPage(),
+                      ),
+                );
               }, child: const Text('Check Out',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
               ),
             )

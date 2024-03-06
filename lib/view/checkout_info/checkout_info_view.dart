@@ -1,12 +1,6 @@
 import 'package:flutter/material.dart';
 
-class CheckoutInformationPage extends StatefulWidget {
-  @override
-  _CheckoutInformationPageState createState() =>
-      _CheckoutInformationPageState();
-}
-
-class _CheckoutInformationPageState extends State<CheckoutInformationPage> {
+class CheckoutInformationPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,133 +12,117 @@ class _CheckoutInformationPageState extends State<CheckoutInformationPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            // Cart Summary
-            const Card(
-              elevation: 2.0,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
+            // Delivery Address
+            const Text(
+              'Delivery Address',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 10),
+            // Address Container
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                border: Border.all(color: Colors.grey),
+              ),
+              padding: const EdgeInsets.all(16),
+              child: const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  ListTile(
-                    title: Text('Cart Summary'),
-                    // Add your cart summary details here
+                  Icon(Icons.home),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('123 Main Street'),
+                      Text('City, Country'),
+                    ],
                   ),
-                  Divider(),
-                  // Add your cart items, quantity, prices, and subtotal here
+                  Icon(Icons.edit),
                 ],
               ),
             ),
+            const SizedBox(height: 20),
 
-            // Shipping Information
-            const Card(
-              elevation: 2.0,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
+            // Products
+            const Text(
+              'Products',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 10),
+            // Product Container
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                border: Border.all(color: Colors.grey),
+              ),
+              padding: const EdgeInsets.all(16),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  ListTile(
-                    title: Text('Shipping Information'),
-                    // Add your shipping information details here
+                  // Product Image
+                  Image.asset(
+                    "assets/image/snekers.png",
+                    width: 50,
+                    height: 50,
+                    fit: BoxFit.cover,
                   ),
-                  Divider(),
-                  // Add shipping address, shipping options, and more here
+                  // Product Details
+                  const Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('Adidas',style: TextStyle(fontWeight: FontWeight.bold)),
+                      Text('Quantity: \$100 x 1'),
+                    ],
+                  ),
+                  // Total Price
+                  const Text('\$100'),
                 ],
               ),
             ),
+            const SizedBox(height: 20),
 
-            // Shipping Method
-            const Card(
-              elevation: 2.0,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
+            // Order Summary
+            const Text(
+              'Order Summary',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 10),
+            // Order Summary Container
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                border: Border.all(color: Colors.grey),
+              ),
+              padding: const EdgeInsets.all(16),
+              child: const Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  ListTile(
-                    title: Text('Shipping Method'),
-                    // Add your shipping method details here
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text('Subtotal'),
+                      Text('\$102',style: TextStyle(fontWeight: FontWeight.bold)),
+                    ],
                   ),
-                  Divider(),
-                  // Add shipping method options, delivery times, and costs here
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text('Delivery Charge'),
+                      Text('\$5',style: TextStyle(fontWeight: FontWeight.bold)),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text('Total'),
+                      Text('\$107',style: TextStyle(fontWeight: FontWeight.bold)),
+                    ],
+                  ),
                 ],
               ),
             ),
+            const SizedBox(height: 20),
 
-            // Payment Information
-            const Card(
-              elevation: 2.0,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  ListTile(
-                    title: Text('Payment Information'),
-                    // Add your payment information details here
-                  ),
-                  Divider(),
-                  // Add credit card details, billing address, and payment options here
-                ],
-              ),
-            ),
-
-            // Promo Code or Discount
-            const Card(
-              elevation: 2.0,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  ListTile(
-                    title: Text('Promo Code or Discount'),
-                    // Add your promo code or discount details here
-                  ),
-                  Divider(),
-                  // Add promo code input field, applied discounts, and adjusted prices here
-                ],
-              ),
-            ),
-
-            // Order Total
-            const Card(
-              elevation: 2.0,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  ListTile(
-                    title: Text('Order Total'),
-                    // Add your order total details here
-                  ),
-                  Divider(),
-                  // Add sum of item prices, shipping costs, taxes, and final amount here
-                ],
-              ),
-            ),
-
-            // Order Review
-            const Card(
-              elevation: 2.0,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  ListTile(
-                    title: Text('Order Review'),
-                    // Add your order review details here
-                  ),
-                  Divider(),
-                  // Add a summary section for users to review entered information
-                ],
-              ),
-            ),
-
-            // Terms and Conditions
-            const Card(
-              elevation: 2.0,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  ListTile(
-                    title: Text('Terms and Conditions'),
-                    // Add your terms and conditions details here
-                  ),
-                  Divider(),
-                  // Add checkbox for agreeing to terms and a link to detailed terms
-                ],
-              ),
-            ),
+            // Other sections (Shipping Information, Shipping Method, Payment Information, etc.)...
 
             // Place Order/Complete Purchase Button
             ElevatedButton(
@@ -154,21 +132,6 @@ class _CheckoutInformationPageState extends State<CheckoutInformationPage> {
               child: const Text('Place Order/Complete Purchase'),
             ),
 
-            // Order Confirmation
-            const Card(
-              elevation: 2.0,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  ListTile(
-                    title: Text('Order Confirmation'),
-                    // Add your order confirmation details here
-                  ),
-                  Divider(),
-                  // Add order number, details, and a receipt/confirmation message
-                ],
-              ),
-            ),
           ],
         ),
       ),

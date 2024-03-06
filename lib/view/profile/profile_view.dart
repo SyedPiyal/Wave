@@ -1,138 +1,51 @@
-import 'package:ecom_wave/view/chat/chat_view.dart';
-import 'package:ecom_wave/view/order_list/order_list_view.dart';
-import 'package:ecom_wave/view/profile/widget/profile_view_custm_row.dart';
-import 'package:ecom_wave/view/profile/widget/profile_view_custom_container.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:ecom_wave/view/profile/widget/profile_menu.dart';
+import 'package:ecom_wave/view/profile/widget/profile_pic.dart';
 import 'package:flutter/material.dart';
 
-class ProfileView extends StatelessWidget {
-  const ProfileView({Key? key}) : super(key: key);
 
+
+class ProfileView extends StatelessWidget {
+  static String routeName = "/profile";
+
+  const ProfileView({super.key});
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              //==============================
-              // profile image
-              //==============================
-              const CircleAvatar(
-                backgroundImage: AssetImage("assets/image/iv_profile.jpg"),
-                radius: 30,
-              ),
-              const SizedBox(height: 10),
-              //==============================
-              // user name
-              //==============================
-              const Text(
-                'Arik',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-              ),
-
-              //==============================
-              // user email address
-              //==============================
-
-              const Text(
-                'arik@gmail.com',
-                style: TextStyle(fontSize: 16),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-
-              //==============================
-              // row for user order,profile,address and message option
-              //==============================
-
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-
-                  //order button
-
-                  ProfileViewCustomContainer(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                         MaterialPageRoute(
-                          builder: (context) => const OrderListView(),
-                        ),
-                      );
-                    },
-                    name: 'Order',
-                    icon: Icons.list_alt_sharp,
-
-                  ),
-
-                  //profile button
-
-                  ProfileViewCustomContainer(
-                    onTap: () {},
-                    name: 'Profile',
-                    icon: Icons.account_circle,
-
-                  ),
-
-                  //address button
-
-                  ProfileViewCustomContainer(
-                    onTap: () {},
-                    name: 'Address',
-                    icon: Icons.location_on_outlined,
-
-                  ),
-
-                  //message button
-
-                  ProfileViewCustomContainer(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                         MaterialPageRoute(
-                          builder: (context) => const UserChat(userName: 'Customer Care', userImage: "assets/image/iv_profile.jpg"),
-                        ),
-                      );
-                    },
-                    name: 'Message',
-                    icon: Icons.message,
-
-                  ),
-                ],
-              ),
-
-              const SizedBox(
-                height: 15,
-              ),
-              const Divider(
-                color: Colors.black12,
-              ),
-               ProfileViewCustomRow(
-                onTap: () {  },
-                  title: 'UserName', subtitle: 'Arik', icon: CupertinoIcons.person, ),
-              const SizedBox(
-                height: 10,
-              ),
-               ProfileViewCustomRow(
-                  onTap: () {  },
-                  title: 'Notification',
-                  subtitle: 'view notification',
-                  icon: Icons.notification_important_rounded),
-
-              const SizedBox(
-                height: 10,
-              ),
-               ProfileViewCustomRow(
-                  onTap: () {  },
-                  title: 'Settings',
-                  subtitle: 'language,log out',
-                  icon: CupertinoIcons.settings),
-            ],
-          ),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Profile"),
+      ),
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.symmetric(vertical: 20),
+        child: Column(
+          children: [
+            const ProfilePic(),
+            const SizedBox(height: 20),
+            ProfileMenu(
+              text: "My Account",
+              icon: "assets/icons/User Icon.svg",
+              press: () => {},
+            ),
+            ProfileMenu(
+              text: "Notifications",
+              icon: "assets/icons/Bell.svg",
+              press: () {},
+            ),
+            ProfileMenu(
+              text: "Settings",
+              icon: "assets/icons/Settings.svg",
+              press: () {},
+            ),
+            ProfileMenu(
+              text: "Help Center",
+              icon: "assets/icons/Question mark.svg",
+              press: () {},
+            ),
+            ProfileMenu(
+              text: "Log Out",
+              icon: "assets/icons/Log out.svg",
+              press: () {},
+            ),
+          ],
         ),
       ),
     );
