@@ -11,12 +11,12 @@ const completeColor = Color(0xff5e6172);
 const inProgressColor = Color(0xff5ec792);
 const todoColor = Color(0xffd1d2d7);
 
-class OrderStatusPage extends StatefulWidget {
+class OrderDetailsPage extends StatefulWidget {
   @override
-  _ProcessTimelinePageState createState() => _ProcessTimelinePageState();
+  _OrderDetailsPageState createState() => _OrderDetailsPageState();
 }
 
-class _ProcessTimelinePageState extends State<OrderStatusPage> {
+class _OrderDetailsPageState extends State<OrderDetailsPage> {
   int _processIndex = 2;
 
   Color getColor(int index) {

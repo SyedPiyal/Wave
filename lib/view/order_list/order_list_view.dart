@@ -51,14 +51,4 @@ class _OrderListViewState extends State<OrderListView> {
     );
   }
 
-  Widget _buildTabContent(String tabName) {
-    return ListView.builder(
-      itemCount: 10,
-      itemBuilder: (context, index) {
-        return ListTile(
-          title: Text('$tabName Item $index'),
-        );
-      },
-    );
-  }
 }

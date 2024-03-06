@@ -1,3 +1,4 @@
+import 'package:ecom_wave/view/checkout_info/widget/bottom_sheet_widget.dart';
 import 'package:flutter/material.dart';
 
 class CheckoutInformationPage extends StatelessWidget {
@@ -25,18 +26,23 @@ class CheckoutInformationPage extends StatelessWidget {
                 border: Border.all(color: Colors.grey),
               ),
               padding: const EdgeInsets.all(16),
-              child: const Row(
+              child:  Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Icon(Icons.home),
-                  Column(
+                  Image.asset(
+                    "assets/image/iv_home.png",
+                    width: 25,
+                    height: 25,
+                    fit: BoxFit.cover,
+                  ),
+                  const Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text('123 Main Street'),
                       Text('City, Country'),
                     ],
                   ),
-                  Icon(Icons.edit),
+                  const Icon(Icons.edit),
                 ],
               ),
             ),
@@ -70,11 +76,11 @@ class CheckoutInformationPage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text('Adidas',style: TextStyle(fontWeight: FontWeight.bold)),
-                      Text('Quantity: \$100 x 1'),
+                      Text('Quantity: \$ 100 x 1'),
                     ],
                   ),
                   // Total Price
-                  const Text('\$100'),
+                  const Text('\$ 100'),
                 ],
               ),
             ),
@@ -100,21 +106,21 @@ class CheckoutInformationPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text('Subtotal'),
-                      Text('\$102',style: TextStyle(fontWeight: FontWeight.bold)),
+                      Text('\$ 102',style: TextStyle(fontWeight: FontWeight.bold)),
                     ],
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text('Delivery Charge'),
-                      Text('\$5',style: TextStyle(fontWeight: FontWeight.bold)),
+                      Text('\$ 5',style: TextStyle(fontWeight: FontWeight.bold)),
                     ],
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text('Total'),
-                      Text('\$107',style: TextStyle(fontWeight: FontWeight.bold)),
+                      Text('\$ 107',style: TextStyle(fontWeight: FontWeight.bold)),
                     ],
                   ),
                 ],
@@ -124,12 +130,126 @@ class CheckoutInformationPage extends StatelessWidget {
 
             // Other sections (Shipping Information, Shipping Method, Payment Information, etc.)...
 
+
+            // Voucher Summary
+            const Text(
+              'Store Voucher',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 10),
+            // Voucher Summary Container
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                border: Border.all(color: Colors.grey),
+              ),
+              padding: const EdgeInsets.all(16),
+              child:  Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+
+                  //voucher image
+                  Image.asset('assets/image/iv_voucher.png',width: 25,height: 25,),
+
+                  //item row
+                  const Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text('Items'),
+                      Text('1',style: TextStyle(fontWeight: FontWeight.bold)),
+                    ],
+                  ),
+
+                  //sub total row
+                  const Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text('SubTotal'),
+                      Text('\$ 107',style: TextStyle(fontWeight: FontWeight.bold)),
+                    ],
+                  ),
+
+                  //saved row
+                  const Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text('Saved'),
+                      Text('\$ 80',style: TextStyle(fontWeight: FontWeight.bold)),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 20),
+            
+            
+            //==============================
+            // Promotion or voucher code
+            //==============================
+
+            // Promotion Summary
+            const Text(
+              'Promotion',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 10),
+            // Promotion Summary Container
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                border: Border.all(color: Colors.grey),
+              ),
+              padding: const EdgeInsets.all(16),
+              child:  Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+
+
+
+                  //voucher row
+                   Row(
+
+                    children: [
+                      //voucher image
+                      Image.asset('assets/image/iv_voucher.png',width: 25,height: 25,),
+                      const SizedBox(width: 10,),
+                      const Text('Voucher'),
+                      const Spacer(),
+                      const Text('Not Applicable ',style: TextStyle(fontWeight: FontWeight.bold),),
+                    ],
+                  ),
+
+                  const SizedBox(
+                    height: 15,
+                  ),
+
+                  //promo code row
+                   InkWell(onTap: () {
+                     CheckoutViewBottomSheetWidget();
+                   },
+                     child: Row(
+                      children: [
+                        //voucher image
+                        Image.asset('assets/image/iv_promocode.png',width: 25,height: 25,),
+                        const SizedBox(width: 10,),
+                        const Text('Promo Code'),
+                        const Spacer(),
+                        const Text('Enter Code ',style: TextStyle(fontWeight: FontWeight.bold),),
+                      ],
+                                       ),
+                   ),
+
+                ],
+              ),
+            ),
+            const SizedBox(height: 20),
+
             // Place Order/Complete Purchase Button
             ElevatedButton(
               onPressed: () {
                 // Implement the functionality to place the order
               },
-              child: const Text('Place Order/Complete Purchase'),
+              child: const Text('Place Order'),
             ),
 
           ],

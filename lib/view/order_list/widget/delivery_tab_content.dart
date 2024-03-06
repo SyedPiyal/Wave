@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../order_status/order_status_view.dart';
-
 
 
 class DeliveryTabContent extends StatelessWidget {
@@ -10,20 +8,21 @@ class DeliveryTabContent extends StatelessWidget {
     return ListView.builder(
       itemCount: 4,
       itemBuilder: (context, index) {
-        return GestureDetector(
-          onTap: () {
-            // Navigate to OrderStatusPage when an item is clicked
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => OrderStatusPage(),
-              ),
-            );
-          },
-          child: const Card(
-            color: Colors.white,
-            margin: EdgeInsets.symmetric(vertical: 10, horizontal: 16),
-            child: Padding(
+        return Card(
+          color: Colors.white,
+          margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
+          child: InkWell(
+            onTap: () {
+              // Navigate to OrderStatusPage when an item is clicked
+              /*Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => OrderStatusPage(),
+                ),
+              );*/
+            },
+            borderRadius: BorderRadius.circular(14),
+            child: const Padding(
               padding: EdgeInsets.all(16),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -47,7 +46,7 @@ class DeliveryTabContent extends StatelessWidget {
 
                       //product status text
                       Text(
-                        'Delivery',
+                        'Delivered',
                         style: TextStyle(color: Colors.red),
                       ),
                     ],

@@ -1,8 +1,8 @@
 import 'package:ecom_wave/view/cart/cart_view.dart';
 import 'package:ecom_wave/view/favorites/favorites_view.dart';
-import 'package:ecom_wave/view/home/home_view.dart';
 import 'package:ecom_wave/view/order_list/order_list_view.dart';
 import 'package:flutter/material.dart';
+import '../../bottom_navigation/bottom_navigation_view.dart';
 
 class CustomDrawer extends StatelessWidget {
   @override
@@ -39,10 +39,11 @@ class CustomDrawer extends StatelessWidget {
           //home icon
           ListTile(
             onTap: () {
+              Navigator.pop(context);
               Navigator.push(
                 context,
                  MaterialPageRoute(
-                  builder: (context) => MyHomePage(title: 'Home'),
+                  builder: (context) => const BottomNavigation(),
                 ),
               );
             },
@@ -54,10 +55,11 @@ class CustomDrawer extends StatelessWidget {
           //order list icon
           ListTile(
             onTap: () {
+              Navigator.pop(context);
               Navigator.push(
                 context,
                  MaterialPageRoute(
-                  builder: (context) => OrderListView(),
+                  builder: (context) => const OrderListView(),
                 ),
               );
             },
@@ -69,10 +71,11 @@ class CustomDrawer extends StatelessWidget {
           //favorites icon
           ListTile(
             onTap: () {
+              Navigator.pop(context);
               Navigator.push(
                 context,
                  MaterialPageRoute(
-                  builder: (context) => FavoritesView(),
+                  builder: (context) => const FavoritesView(),
                 ),
               );
             },
@@ -85,10 +88,11 @@ class CustomDrawer extends StatelessWidget {
 
           ListTile(
             onTap: () {
+              Navigator.pop(context);
               Navigator.push(
                 context,
                  MaterialPageRoute(
-                  builder: (context) => CartView(),
+                  builder: (context) => const CartView(),
                 ),
               );
             },
