@@ -128,7 +128,7 @@ class CheckoutInformationPage extends StatelessWidget {
             ),
             const SizedBox(height: 20),
 
-            // Other sections (Shipping Information, Shipping Method, Payment Information, etc.)...
+
 
 
             // Voucher Summary
@@ -207,17 +207,25 @@ class CheckoutInformationPage extends StatelessWidget {
 
 
                   //voucher row
-                   Row(
+                   InkWell(onTap: () {
+                     // Show the promo code bottom sheet when tapped
+                     showModalBottomSheet(
+                       context: context,
+                       builder: (context) => const PromoCodeBottomSheet(text: 'Voucher Code'),
+                     );
+                   },
+                     child: Row(
 
-                    children: [
-                      //voucher image
-                      Image.asset('assets/image/iv_voucher.png',width: 25,height: 25,),
-                      const SizedBox(width: 10,),
-                      const Text('Voucher'),
-                      const Spacer(),
-                      const Text('Not Applicable ',style: TextStyle(fontWeight: FontWeight.bold),),
-                    ],
-                  ),
+                      children: [
+                        //voucher image
+                        Image.asset('assets/image/iv_voucher.png',width: 25,height: 25,),
+                        const SizedBox(width: 10,),
+                        const Text('Voucher'),
+                        const Spacer(),
+                        const Text('Not Applicable ',style: TextStyle(fontWeight: FontWeight.bold),),
+                      ],
+                                       ),
+                   ),
 
                   const SizedBox(
                     height: 15,
@@ -225,7 +233,11 @@ class CheckoutInformationPage extends StatelessWidget {
 
                   //promo code row
                    InkWell(onTap: () {
-                     CheckoutViewBottomSheetWidget();
+                     // Show the promo code bottom sheet when tapped
+                     showModalBottomSheet(
+                         context: context,
+                         builder: (context) => const PromoCodeBottomSheet(text: 'Promo Code'),
+                     );
                    },
                      child: Row(
                       children: [
@@ -249,7 +261,11 @@ class CheckoutInformationPage extends StatelessWidget {
               onPressed: () {
                 // Implement the functionality to place the order
               },
-              child: const Text('Place Order'),
+              //change button color
+              style: ElevatedButton.styleFrom(
+                primary: Colors.blue, // Change the color to blue
+              ),
+              child: const Text('Place Order',style: TextStyle(color: Colors.white),),
             ),
 
           ],
