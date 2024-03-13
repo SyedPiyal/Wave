@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 import '../order_status/widget/package_delivery_tracking.dart';
 
-
 class CartView extends StatefulWidget {
   const CartView({Key? key}) : super(key: key);
 
@@ -29,7 +28,7 @@ class _CartViewState extends State<CartView> {
       appBar: AppBar(
         backgroundColor: const Color(0xffFFF8F2),
       ),
-      body:  Padding(
+      body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 25),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -39,28 +38,48 @@ class _CartViewState extends State<CartView> {
               style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
             ),
             CartViewListWidget(cartList: cartData),
-            const SizedBox(height: 27,),
-
+            const SizedBox(
+              height: 27,
+            ),
             const Row(
               children: [
-                Text('Total Amount ',style: TextStyle(fontSize: 18),),
-                Text(' \$ 204',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 23),)
+                Text(
+                  'Total Amount ',
+                  style: TextStyle(fontSize: 18),
+                ),
+                Text(
+                  ' \$ 204',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 23),
+                )
               ],
             ),
             const SizedBox(
-              height: 10,
+              height: 20,
             ),
             SizedBox(
               width: 400,
               height: 50,
-              child: ElevatedButton(onPressed: () {
-                Navigator.push(
-                  context,
+              child: ElevatedButton(
+                onPressed: () {
+
+                  //PackageDeliveryTrackingPage
+
+                  /*Navigator.push(
+                    context,
                     MaterialPageRoute(
                       builder: (context) => PackageDeliveryTrackingPage(),
-                      ),
-                );
-              }, child: const Text('Check Out',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
+                    ),
+                  );*/
+                },
+                //change button color
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blue, // Change the color to blue
+                ),
+                child: const Text(
+                  'Check Out',
+                  style: TextStyle(
+                      color: Colors.white, fontWeight: FontWeight.bold),
+                ),
               ),
             )
           ],

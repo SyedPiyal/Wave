@@ -263,7 +263,7 @@ class CheckoutInformationPage extends StatelessWidget {
               },
               //change button color
               style: ElevatedButton.styleFrom(
-                primary: Colors.blue, // Change the color to blue
+                backgroundColor: Colors.blue, // Change the color to blue
               ),
               child: const Text('Place Order',style: TextStyle(color: Colors.white),),
             ),

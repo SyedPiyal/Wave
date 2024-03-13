@@ -13,12 +13,12 @@ class DeliveryTabContent extends StatelessWidget {
         return GestureDetector(
           onTap: () {
             // Navigate to OrderStatusPage when an item is clicked
-            Navigator.push(
+            /*Navigator.push(
               context,
               MaterialPageRoute(
                 builder: (context) => OrderStatusPage(),
               ),
-            );
+            );*/
           },
           child: const Card(
             color: Colors.white,

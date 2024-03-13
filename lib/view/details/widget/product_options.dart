@@ -62,8 +62,8 @@ class ColorOption extends StatelessWidget {
           color: _getColor(),
           shape: BoxShape.circle,
           border: Border.all(
-            color: isSelected ? Colors.deepOrange : Colors.grey,
-            width: 2,
+            color: isSelected ? Colors.black : Colors.grey,
+            width: 1,
           ),
         ),
       ),
@@ -79,7 +79,7 @@ class ColorOption extends StatelessWidget {
       case 'Yellow':
         return Colors.yellow;
       case 'Pink':
-        return Colors.pink;
+        return Colors.cyanAccent;
       default:
         return Colors.grey;
     }

@@ -57,7 +57,7 @@ class _PromoCodeBottomSheetState extends State<PromoCodeBottomSheet> {
             },
             //change button color
             style: ElevatedButton.styleFrom(
-              primary: Colors.blue, // Change the color to blue
+              backgroundColor: Colors.blue, // Change the color to blue
             ),
             child: const Text('Apply',style: TextStyle(color: Colors.white),),
           ),

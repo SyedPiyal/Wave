@@ -11,9 +11,9 @@ enum SampleItem { itemOne, itemTwo, itemThree }
 
 class UserChat extends StatefulWidget {
   final String userName;
-  final String userImage;
+  //final String userImage;
 
-  const UserChat({Key? key, required this.userName, required this.userImage})
+  const UserChat({Key? key, required this.userName/*, required this.userImage*/})
       : super(key: key);
 
   @override
